@@ -16,6 +16,7 @@ add_library(bms STATIC
     src/contactor.c
     src/crc8.c
     src/fault_manager.c
+    src/pyro_fuse.c
 )
 target_include_directories(bms PUBLIC include)
 
@@ -27,6 +28,7 @@ set(BMS_TESTS
     test_cell_monitor
     test_contactor
     test_fault_manager
+    test_pyro_fuse
 )
 foreach(test_name IN LISTS BMS_TESTS)
     add_executable(${test_name} test/${test_name}.c test/hal_stub.c)

@@ -18,6 +18,7 @@ typedef struct
     bms_status_t write_result;              /**< Returned by every output function. */
     uint16_t balancing_mask;                /**< Last mask set. */
     bool contactor[HAL_CONTACTOR_COUNT];    /**< Last coil state per contactor. */
+    bool pyro_fuse_triggered;               /**< Whether a trigger was accepted. */
     bms_ms_t now_ms;                        /**< Value returned by hal_now_ms(). */
     uint32_t can_count;                     /**< Frames sent since reset. */
     uint32_t last_can_id;

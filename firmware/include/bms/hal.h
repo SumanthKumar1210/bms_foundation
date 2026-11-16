@@ -59,6 +59,12 @@ bms_status_t hal_set_balancing(uint16_t mask);
 bms_status_t hal_set_contactor(hal_contactor_t contactor, bool closed);
 
 /**
+ * @brief Issue the target-specific trigger pulse for the Pyro Fuse.
+ * @return BMS_OK or BMS_E_HW.
+ */
+bms_status_t hal_fire_pyro_fuse(void);
+
+/**
  * @brief Queue a classic CAN frame for transmission.
  * @param id 11-bit identifier.
  * @param data Payload.

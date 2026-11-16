@@ -89,6 +89,15 @@ bms_status_t hal_set_contactor(hal_contactor_t contactor, bool closed)
     return hal_stub.write_result;
 }
 
+bms_status_t hal_fire_pyro_fuse(void)
+{
+    if (hal_stub.write_result == BMS_OK)
+    {
+        hal_stub.pyro_fuse_triggered = true;
+    }
+    return hal_stub.write_result;
+}
+
 bms_status_t hal_can_send(uint32_t id, const uint8_t *data, uint8_t len)
 {
     if (data == NULL)
